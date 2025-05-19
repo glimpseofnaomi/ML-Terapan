@@ -96,45 +96,52 @@ Data tidak memiliki nilai duplikat
 #### 4. Analisis distribusi dan korelasi
 - Statistika deskriptif
 
-  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1EGILTlhdc238VLHI1oioZBeuOgiKpiZl)
-
-  ![Distribusi Label](https://drive.google.com/file/d/1EGILTlhdc238VLHI1oioZBeuOgiKpiZl/view?usp=sharing)
+|      | pH | Hardness | Solids | Chloramines | Sulfate | Conductivity | Organic_carbon | Trihalomethanes | Turbidity | Potability |
+|------|----------|--------|-------------|---------|--------------|----------------|-----------------|-----------|----------|-----|
+| count| 2785.0 | 3276.0 | 3276.0   | 3276.0| 2495.0 | 3276.0          | 3276.0         | 3114.0      | 3276.0       | 3276.0   |
+| mean | 7.0    | 196.3  | 22014.00 | 7.1   | 333.7  | 426.2           | 14.2           | 66.3        | 3.9          | 0.3      |
+| std  | 1.5    | 32.8   | 8768.5   | 1.5   | 41.4   | 80.8            | 3.3            | 16.1        | 0.7          | 0.4      |
+| min  | 0.0    | 47.4   | 320.9    | 0.3   | 129.0  | 181.4           | 2.2            | 0.7         | 1.4          | 0.0      |
+| 25%  | 6.0    | 176.8  | 15666.6  | 6.1   | 307.6  | 365.7           | 12.0           | 55.8        | 3.4          | 0.0      |
+| 50%  | 7.0    | 196.9  | 20927.8  | 7.1   | 333.0  | 421.8           | 14.2           | 66.6        | 3.9          | 0.0      |
+| 75%  | 8.0    | 216.6  | 27332.7  | 8.1   | 359.9  | 481.7           | 16.5           | 77.3        | 4.5          | 1.0      |
+| max  | 14.0   | 323.1  | 61227.1  | 13.1  | 481.0  | 753.3           | 28.3           | 124.0       | 6.7          | 1.0      |
 
   Berdasarkan statistik deskriptif, variabel seperti ph memiliki nilai minimum 0 yang tidak realistis, menunjukkan kemungkinan data tidak valid. Proporsi data Potability menunjukkan ketidakseimbangan kelas (sekitar 39% layak konsumsi). Beberapa variabel seperti Solids dan Trihalomethanes memiliki rentang nilai luas, mengindikasikan kemungkinan _outlier_. Maka, diperlukan penanganan terhadap data hilang dan _outlier_ sebelum pemodelan.
 
 - Distribusi variabel 
 
-  ![Distribusi Label](https://drive.google.com/file/d/1xjeODXx-uc5LvhTeYBj83q1gCEsjiKia/view?usp=drive_link)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1xjeODXx-uc5LvhTeYBj83q1gCEsjiKia/view?usp=drive_link)
 
   Berdasarkan grafik histogram menunjukkan bahwa sebagian besar variabel terdistribusi normal, meskipun ada sedikit kemencengan pada variabel seperti Solids dan Trihalomethanes. 
 
 - Distribusi persentase variabel Potability
 
-  ![Distribusi Label](https://drive.google.com/file/d/1Ibng71hKaEUXtmOzkzFg18XDi_8K_WkK/view?usp=drive_link)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1Ibng71hKaEUXtmOzkzFg18XDi_8K_WkK/view?usp=drive_link)
 
   Berdasarkan grafik _pie chart_ terlihat bahwa persentase ketersediaan air yang tidak dapat diminum memiliki persentase lebih besar yaitu 61% dibandingkan ketersediaan air yang tidak dapat diminum yaitu 39%.
 
 - Distribusi variabel Potability pada variabel non target
 
-  ![Distribusi Label](https://drive.google.com/file/d/1yRz2O5cuzlXZDXBScpvngKz0Mu9ES187/view?usp=drive_link)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1yRz2O5cuzlXZDXBScpvngKz0Mu9ES187/view?usp=drive_link)
 
   Pada grafik, terlihat bahwa variabel-variabel yang memengaruhi status dapat diminum dan tidak dapat diminum tidak jauh berbeda satu sama lain.
 
 - Distribusi pairplot
 
-  ![Distribusi Label](https://drive.google.com/file/d/1e2yipzuLm_3qWO7jQyd92s7qM2Z2u253/view?usp=drive_link)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1e2yipzuLm_3qWO7jQyd92s7qM2Z2u253/view?usp=drive_link)
 
   Berdasarkan visualisasi _pairplot_ di atas, terlihat bahwa Beberapa distribusi variabel tampak tidak simetris dan cenderung _skewed_ yang mengindikasikan perlunya transformasi seperti _log transform_ pada tahap praproses untuk meningkatkan performa model.
 
 - Boxplot
 
-  ![Distribusi Label](https://drive.google.com/file/d/1cDJvmU2C1KcGEXDjsOiCssHM0tFr769J/view?usp=)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1cDJvmU2C1KcGEXDjsOiCssHM0tFr769J/view?usp=)
 
   Berdasarkan visualisasi _boxplot_ di atas terlihat bahwa variabel seperti Solids dan Trihalomethanes memiliki sebaran data yang cukup luas dan _outlier_ ekstrem. Meskipun distribusi data secara umum tampak simetris pada beberapa variabel, keberadaan _outlier_ dapat memengaruhi kinerja model _machine learning_ sehingga perlu dilakukan penanganan.
 
 - Heatmap korelasi
 
-  ![Distribusi Label](https://drive.google.com/file/d/1lH_kZM3gyQY96od2hGPF1d_hM1_qHL6V/view?usp=drive_link)
+  ![Distribusi Label](https://drive.google.com/uc?export=view&id=1lH_kZM3gyQY96od2hGPF1d_hM1_qHL6V/view?usp=drive_link)
 
   Berdasarkan hasil _heatmap_ korelasi antar variabel di atas, dapat disimpulkan bahwa hubungan antar variabel dalam dataset ini cenderung lemah. Korelasi paling besar secara absolut adalah antara Solids dan Sulfate (-0.17), tetapi nilainya tetap tergolong rendah. Hal ini menunjukkan bahwa pendekatan klasifikasi yang digunakan tidak bisa hanya mengandalkan hubungan linier antar variabel, melainkan perlu model yang mampu menangkap hubungan non-linier, seperti Random Forest atau XGBoost.
 
@@ -253,7 +260,7 @@ Setelah dilakukan _hyperparameter tuning_ dengan GridSearchCV, performa Random F
 
 ### Feature importance
 
-![Distribusi Label](https://drive.google.com/file/d/1kmkl3hBggoFutbsWiDOUHqydKgdI70Gx/view?usp=drive_link)
+![Distribusi Label](https://drive.google.com/uc?export=view&id=1kmkl3hBggoFutbsWiDOUHqydKgdI70Gx/view?usp=drive_link)
 
 Hasil analisis _feature importance_ dari model Random Forest mengindikasikan bahwa pH, Sulfate, dan Hardness merupakan variabel yang paling signifikan dalam menentukan kelayakan air untuk dikonsumsi.
 
